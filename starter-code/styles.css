@@ -1,0 +1,8 @@
+/* #towerDefense{
+ background-image: url("/images/Maps/dash.png");
+} */
+
+.background{
+  background-image: url("./images/Maps/dash.png");
+  background-size: cover; 
+} 
