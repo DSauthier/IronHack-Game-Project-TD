@@ -118,6 +118,8 @@ class Tower {
 
   
     draw() {
+
+
       this.ctx.fillStyle = "white";
       this.ctx.fillRect(100, this.y, this.width, this.height);
       this.ctx.fillRect(200, 300, this.width, this.height);
@@ -178,13 +180,20 @@ class Creep {
   // }
   
   draw() {
-    this.ctx.fillStyle = "#FF0000";
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
-    // THIS.X MUST STOP AT 795, SO WHEN IT STOPS, PLAYER LOSE A LIFE AND THE GAME STOPS DRAWING THAT CREEP ->
-    //  HOW TO MAKE IT STOP DRAWING? WHEN IT STOPS, PLAYERMONEY += 25; 
-    if(this.x > 795){
-      this.x = 797
-      console.log(this + "reached the final point")  
+
+    this.ctx.clearRect(this.x,this.y, this.width, this.height);
+
+    if(this.x < 795){
+
+      this.ctx.fillStyle = "#FF0000";
+      this.ctx.fillRect(this.x, this.y, this.width, this.height);
+      this.ctx.x++
+      // THIS.X MUST STOP AT 795, SO WHEN IT STOPS, PLAYER LOSE A LIFE AND THE GAME STOPS DRAWING THAT CREEP ->
+      //  HOW TO MAKE IT STOP DRAWING? WHEN IT STOPS, PLAYERMONEY += 25; 
+    }
+      if(this.x > 795){
+        this.x = 797
+        console.log(this + "reached the final point")  
     }
   }
   
